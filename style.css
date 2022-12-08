@@ -1,0 +1,18 @@
+header{
+    height: 50px;
+    background-color: rgb(180, 106, 46);
+}
+
+
+nav{
+    height: 50px;
+    background-color: rgb(243, 71, 122);
+}
+
+footer{
+    height: 70px;
+    background-color: rgb(136, 64, 6);
+}
+
+
+/*統一設定演示:height針對標籤的質，做高度的行內設定。2用bg設定顏色。*/
