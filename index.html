@@ -14,7 +14,7 @@
 /* main:網頁的主要內容，設定行指令跟水平方向 */
 main{
     display: flex;
-    flex-direction: row;
+    flex-direction: row;/**/
 }
 
 /*article:一篇文章內容*/
@@ -24,22 +24,31 @@ article{
 }
 
 aside{
-    background-color: rgba(248, 193, 40, 0.952);
+    background-color: rgba(218, 129, 14, 0.952);
     width: 40%;}
     /*footer*/
     footer {
         background-color: rgba(173, 81, 5, 0.952);width: 100%}
+        #header{
+height: 50px;
+background-color: rgb(243, 203, 72);
+        }
+
+        nav{
+            background-color: rgba(142, 59, 219, 0.952);width: 100%
+        }
 </style>
 </head>
 <body>
 
 
 
-<!--span:行內元素-->
-<span style="background-color: rgb(69, 67, 179);">網頁架構</span>
+<!--span:行內元素
+<span style="background-color: rgb(69, 67, 179);">網頁架構</span>-->
 
 <!--區塊元素-->
-<header>
+<header id="header">
+
     header 網站標題
 </header>
 
