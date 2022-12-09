@@ -4,103 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="關鍵字">
-<!--meta name="description=設定網頁摘要"; content=搜索引擎的關鍵字-->
-    <title>Berry Cake</title>
-<link rel="stylesheet" href="style.css">
-
-<style>
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    vertical-align: baseline;
-    background: transparent;
-    font-size: 0.75rem;
-    font-weight:normal;
-    line-height:1.86em;
-    word-spacing: 1px;
-    letter-spacing: 1px;
+    <title>HTML常用標籤</title>
+    <style>
+        p {
+    display: block;
+    margin-block-start: 2em;
+    margin-block-end: 3em;
+    margin-inline-start: 40px;
+    margin-inline-end: 20px;
 }
 
 
-
-
-/* main:網頁的主要內容，設定行指令跟水平方向 */
-main{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 20px;
+.p1 {
+    margin-block-start: 5em;
+    margin-block-end: 1em;
+    margin-inline-start: 20px;
+    margin-inline-end: 60px;
 }
 
-/*article:一篇文章內容*/
-article{
-    background-color: blanchedalmond;
-    width: 70%;
-    margin-right: 5%;
+.p2{
+/*盒子編排順序:上、右、下、左*//*第一種方式:margin: 2em 4em 6em 8em;*/
+/*盒子設定:上下跟左右*//**第一種方式margin: 5em 10em;*/
+/**第三種方式:個別設定*/
+margin-top: 1em;
+margin-right: 2em;
+margin-bottom: 3em;
 }
-.article{margin-bottom: 20px;}
 
-aside{
-    background-color: rgba(218, 129, 14, 0.952);
-    width: 25%;}
-    /*footer*/
-    footer {
-        background-color: rgba(173, 81, 5, 0.952);width: 100%}
-        #header{
-height: 50px;
-background-color: rgb(243, 203, 72);
-margin-bottom: 20px;
-        }
-
-        nav{
-            background-color: rgba(142, 59, 219, 0.952);
-            width: 100%
-        }
-        .nav{margin-bottom: 20px;}
-</style>
+    </style>
 </head>
+
 <body>
+    <h1>標題字1</h1>
+    <h2>標題字2</h2>
+    <h3>標題字3</h3>
+    <h4>標題字4</h4>
+    <h5>標題字5</h5>
+    <h6>標題字6</h6>
 
+<p class="p1">好像告訴我有什麼音樂目的開發商對你。</p>
 
-
-<!--span:行內元素
-<span style="background-color: rgb(69, 67, 179);">網頁架構</span>-->
-
-<!--區塊元素-->
-<header id="header">
-
-    header 網站標題
-</header>
-
-<nav>
-    nav 導覽列
-</nav>
-<main >
-    <article>
-        article 左區塊或文章區塊
-        <section>
-        section 右區塊或文章區塊
-        </section>
-    </article>
-
-    <aside>
-       aside 側欄
-    </aside>
-</main>
-
-
-<footer>
-    footer 網頁的頁尾，通常放置聯絡方式、著作權宣告等等
-</footer>
-
-
-
-
-
-
-
-
+<p class="p2">車輛為止地方程式聯繫方式，抓住優秀基金家電本月幾次逐步請求不用感謝，才能還是地面演出，有時你也，突。</p>
 </body>
 </html>
