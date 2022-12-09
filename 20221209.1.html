@@ -43,10 +43,25 @@ margin-left: 4em;
     <h3>盒子設定第二種方式:僅設定上下跟左右</h3>
     <h4>盒子設定第三種方式:個別設定</h4>
     <h5>margin:區塊元素與行內元素，改變左右邊距、填充</h5>
-    <h6>盒子</h6>
+    <h6>有序列表:屬性value可以指定起始值</h6>
 
 <p class="p1">HTML常用標籤:標題、段落、區塊元素與行內元素。</p>
 
 <p class="p2">HTML元素依顯現模式可區分兩種，區塊元素跟行內元素。<br>備註:區塊元素會從新行開始，寬度佔滿整個容器。</p>
+
+<p class="p4"></p>
+<p id="p4" class="p3"></p>
+<style>
+ol>li{
+    list-style-type: upper-roman; /*設定序列清單編碼*/
+}
+</style>
+
+<ol>
+    <li value><a href="#">111</a></li>
+    <li><a href="#">222</a></li>
+    <li><a href="#">333</a></li>
+</ol>
+
 </body>
 </html>
