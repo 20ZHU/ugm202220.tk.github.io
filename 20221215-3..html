@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+  <title>表單</title>
+  <style>
+    input:invalid,
+    select:invalid,
+    textarea:invalid,
+    input:focus:invalid,
+    select:focus:invalid,
+    textarea:focus:invalid {
+      border-color: #dc3545;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <h1 class="text-center mt-3">表單</h1>
+    <form action="https://script.google.com/macros/s/AKfycbwtDqZiw3RSzAksn5TaFedWu_V0GGa51UrDXk9UVswEBCg_9bF18Hc9M0uuNxsxNpZg/exec" method="post">
+
+      <div class="row">
+        <!-- input text 文字方塊(單行)-->
+        <div class="col-sm-3 mb-3">
+          <label for="name" class="form-label">姓名</label>
+          <input type="text" name='name' value='' class="form-control" id="name" required>
+        </div>
+
+        <!-- input url 網址 -->
+        <div class="col-sm-3 mb-3">
+          <label for="url" class="form-label">網址</label>
+          <input type="url" name="url" value='' class="form-control" id="url">
+        </div>
+
+        <!-- input email EMAIL-->
+        <div class="col-sm-3 mb-3">
+          <label for="email" class="form-label">EMAIL</label>
+          <input type="email" name="email" value='' class="form-control" id="email" required>
+        </div>
+
+        <!-- input password 密碼 -->
+        <div class="col-sm-3 mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" value='' class="form-control" id="password">
+        </div>
+
+        <!-- input date 日期方塊 -->
+        <div class="col-sm-3 mb-3">
+          <label for="date" class="form-label">日期方塊</label>
+          <input type="date" name="date" value='' class="form-control" id="date">
+        </div>
+
+        <!-- input date 年月方塊 -->
+        <div class="col-sm-3 mb-3">
+          <label for="month" class="form-label">年月方塊</label>
+          <input type="month" name="month" value='' class="form-control" id="month">
+        </div>
+
+        <!-- input week 年週方塊-->
+        <div class="col-sm-3 mb-3">
+          <label for="week" class="form-label">年週方塊</label>
+          <input type="week" name="week" value='' class="form-control" id="week">
+        </div>
+
+        <!-- input color 顏色選擇器-->
+        <div class="col-sm-3 mb-3">
+          <label for="color" class="form-label">顏色選擇器</label>
+          <input type="color" name="color" value='#000000' class="form-control" id="color">
+        </div>
+
+        <!-- input number 數字方塊-->
+        <div class="col-sm-3 mb-3">
+          <label for="number" class="form-label">數字方塊</label>
+          <input type="number" name="number" value='' class="form-control" id="number">
+        </div>
+
+        <!-- input search 搜尋方塊-->
+        <div class="col-sm-3 mb-3">
+          <label for="search" class="form-label">搜尋方塊</label>
+          <input type="search" name="search" value='' class="form-control" id="search">
+        </div>
+
+        <!-- input range 滑動方塊-->
+        <div class="col-sm-3 mb-3">
+          <label for="range" class="form-label">滑動方塊</label>
+          <input type="range" name="range" value='' class="form-control" id="range" min="0" max="100" value="90" step="1">
+        </div>
+
+        <!-- 單選 -->
+        <div class="col-sm-12 mb-3">
+          <label class="form-label w-100">單選</label>
+
+          <div class="form-check form-check-inline">
+            <input type="radio" name="radio" value='單選1' class="form-check-input" id="radio_1" required>
+            <label class="form-check-label" for="radio_1">單選1</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input type="radio" name="radio" value='單選2' class="form-check-input" id="radio_2">
+            <label class="form-check-label" for="radio_2">單選2</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input type="radio" name="radio" value='單選3' class="form-check-input" id="radio_3">
+            <label class="form-check-label" for="radio_3">單選3</label>
+          </div>
+
+        </div>
+
+        <!-- 多選 -->
+        <div class="col-sm-12 mb-3">
+          <label class="form-label w-100">多選</label>
+
+          <div class="form-check form-check-inline">
+            <input type="checkbox" name="checkbox" value='多選1' class="form-check-input" id="checkbox_1">
+            <label class="form-check-label" for="checkbox_1">多選1</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input type="checkbox" name="checkbox" value='多選2' class="form-check-input" id="checkbox_2" checked>
+            <label class="form-check-label" for="checkbox_2">多選2</label>
+          </div>
+
+          <div class="form-check form-check-inline">
+            <input type="checkbox" name="checkbox" value='多選3' class="form-check-input" id="checkbox_3">
+            <label class="form-check-label" for="checkbox_3">多選3</label>
+          </div>
+        </div>
+
+        <!-- 下拉選單 -->
+        <div class="col-sm-6 mb-3">
+          <label class="form-label">下拉選單</label>
+          <select name="select" class="form-select" id="select">
+            <option value="下拉選單1">下拉選單1</option>
+            <option value="下拉選單2" selected>下拉選單2</option>
+            <option value="下拉選單3">下拉選單3</option>
+          </select>
+        </div>
+
+        <!-- 選單(多選) -->
+        <div class="col-sm-6 mb-3">
+          <label class="form-label">下拉選單(多選)</label>
+          <select name="select_m" class="form-select" id="select_m" multiple required>
+            <option value="下拉選單(多選)1">下拉選單(多選)1</option>
+            <option value="下拉選單(多選)2">下拉選單(多選)2</option>
+            <option value="下拉選單(多選)3">下拉選單(多選)3</option>
+          </select>
+        </div>
+
+        <!-- 文字區域(多行) -->
+        <div class="col-sm-12 mb-3">
+          <label class="form-label">文字區域</label>
+          <textarea name="textarea" class="form-control" id="textarea" rows="5">文字區域123</textarea>
+        </div>
+
+        <!-- 隱藏-->
+        <input type="hidden" name='op' value='set_sheet' class="form-control" id="op">
+
+        <button type="submit" class="btn btn-primary w-100">送出</button>
+
+
+      </div>
+
+    </form>
+  </main>
+
+
+</body>
+
+</html>
