@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不規則邊緣網頁切版</title>
+    <style type="text/css">
+        @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Noto+Serif+TC:wght@300;500;900&display=swap");
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .banner{
+            height: 700px;
+            background: url(https://lumiere-a.akamaihd.net/v1/images/wir2-rgb-ewprincesses_r_ac858601.jpeg) center top / cover;/*no-repeat center /cover; 指令:使圖片便滿版*/
+        }
+        /* font-family:'Noto+Sans TC', sans-serif; 思源體*/
+
+        .sec{
+            position: relative;
+        }/*相對定位*/
+
+        .sec .container{
+          width: 1200px;
+          margin: auto;
+          display: flex;
+          padding: 100px 0;
+          position: relative;
+          z-index: 2; /*相對定位*/
+        }
+        .sec .item{
+            width: 570px;
+            margin: 0 15px;
+            font-family:'Noto+Sans TC', sans-serif;
+        }
+        .sec .item h2{
+            margin-bottom: 1.3em;
+        }
+        .sec .item p{
+            line-height: 1.7;
+            margin-bottom: 1.6em;
+        }
+        .sec::after{
+            content: '';
+            display: block;
+            position: absolute;  /*絕對定位*/
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            top: 0;
+            left: 50%;
+            transform: translateX(-30%)translateY(-50%);
+            border-radius: 50%;
+            box-shadow: 178px 0px 0px 30px #fff,
+                        327px 34px 0px 20px #fff,
+                        480px 9px 0px 60px #fff,
+                        690px 71px 0px 60px #fff,
+                        880px 0px 0px 89px #fff,
+
+                        -178px 0px 0px 30px #fff,
+                        -327px 34px 0px 20px #fff,
+                        -480px 9px 0px 60px #fff,
+                        -690px 71px 0px 60px #fff,
+                        -880px 0px 0px 89px #fff,
+                        -1100px 50px 0px 89px #fff,
+
+                        100px 0px 0px 56px rgba(0,0,10,.5),
+                        298px 10px 0px 56px rgba(0,0,10,.5),
+                        540px -40px 0px 50px rgba(0,0,10,.5),
+                        740px -30px 0px 30px rgba(0,0,10,.5),
+                        880px -100px 0px 80px rgba(0,0,10,.5),
+                        1000px -60px 0px 80px rgba(0,0,10,.5),
+                        /**/
+                        -100px 0px 0px 56px rgba(0,0,10,.5),
+                        -298px 10px 0px 56px rgba(0,0,10,.5),
+                        -540px -40px 0px 50px rgba(0,0,10,.5),
+                        -740px -30px 0px 30px rgba(0,0,10,.5),
+                        -780px -70px 0px 80px rgba(0,0,10,.5),
+                        -1200px -60px 0px 80px rgba(0,0,10,.5);
+        }
+        .sec::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            background-color: #fff;
+            z-index: 1; /*相對定位*/
+            top: 0;
+            left: 0;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="banner"></div>
+<div class="sec">
+    <div class="container">
+        <div class="item">
+            <h2> DISNEY INFINITY-Vanellope </h2>
+            <br>
+            <p>迪士尼無限世界系列:雲妮露·凡史威茲（Vanellope von Schweetz）是《無敵破壞王》和 《無敵破壞王2》中的主要角色。為《甜蜜衝刺》中糖果王國公主，但被糖果王所陷害，後與破壞王雷夫(無敵破壞王)認識成為好友，並恢復了身分。和破壞王一起出現在迪士尼無限世界遊戲中，為可使用的角色之一，不過在Play set模式中不能使用雲妮露。此外在遊戲開場的時候也乘著車出現。</p>
+
+            <p>雲妮露是個活潑可愛的小女孩，但因本身是個bug而導致畫質不穩，因而受到其他角色排擠。 原本為《甜蜜衝刺》(甜蜜大冒險)的重要角色，但被糖果王多次阻撓她參賽。實際上雲妮露的真實身分是《甜蜜衝刺》中糖果王國的公主，只是被化身為糖果王的渦輪竄改程式霸佔了她的王位。 起初是為了跟破壞王作條件交換而合作，但兩人經歷了多次爭吵及合作後反而加深了友情。</p>
+            <br><br>
+        </div>
+        <div class="item">
+            <h2>Vanellope and ability</h2>
+            <br>
+            <p>故事中糖果王對於程式的更改讓雲妮露有了「突波」（glitch）的能力，雲妮露本身設定為厲害的賽車手，即使一度記憶被改變，身體里還是有這分能力，也因此稍加訓練之後就能獲勝，如她所說「我告訴你，賽車就在我的代碼中！</p>
+
+            <p>雲妮露出現在故事書《One Sweet Race》，故事設定在電影之後，其中甜心·福樂奶油因為一直沒辦法在賽車中獲勝而難過，甚至不甘心而把他自己的車給砸了，雲妮露於是決定幫助他。</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

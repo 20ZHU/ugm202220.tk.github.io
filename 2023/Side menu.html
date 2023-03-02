@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>直式側邊選單 </title>
+    <!-- 字體 -->
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Noto+Serif+TC:wght@300;500;900&display=swap">
+    <!-- font-family:'Noto+Sans TC', sans-serif; -->
+
+
+    <!-- 其他 -->
+    <style type="text/css">
+    @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css");
+
+    /* @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"); */
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family:'Noto+Sans TC', sans-serif;
+    }
+    html,body{
+        height: 100%;
+    }
+    body{
+        background-color: rgba(106, 141, 136, 0.877);
+    }
+
+    .side-menu{
+        position: relative;
+     width: 300px;
+     height: 100%;
+     padding: 50px 0;
+     box-sizing: border-box;
+  background-image: linear-gradient(0deg,#c2196c,#3381b0);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 0 10px hsla(240,40%,15%,.6);
+  transform: translateX(-100%);
+  transition: .3s;
+    }
+    .side-menu form{
+  display: flex;
+  margin: 0 10px 50px;
+  border-radius: 100px;
+  border: 1px solid rgb(255,255,255,.4);
+    }
+    .side-menu form-input,
+    .side-menu form-button{
+        border:none;
+        background-color: transparent;
+        color: #fff;
+        padding: 5px 10px;
+
+    }
+    .side-menu form-input{ width: 230px;}
+    .side-menu form-button{width: 50px; }
+
+    .side-menu form-input:focus,
+    .side-menu form-button:focus{
+        outline: none;
+    }
+    .side-menu label{
+        position: absolute;
+        width: 40px;
+        height: 80px;
+        background-color: #000;
+        color: #fff;
+        right: -40px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        line-height: 80px;
+        text-align: center;
+        font-size: 30px;
+        border-radius: 0 10px 10px 0;
+    }
+    #side-menu-switch{
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+    }
+    #side-menu-switch:checked + .side-menu{
+        transform: translateX(0);
+    }
+    #side-menu-switch:checked + .side-menu label .fa{
+    transform: scaleX(-1);
+    }
+.nav a{
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    font-family:'Noto+Sans TC', sans-serif;
+}
+.nav li{
+    position: relative;
+}
+.nav li+li a::before{
+    content: '';
+    position: absolute;
+    border-top: 1px solid rgb(255,255,255,.4);
+    left: 10px;
+    right: 10px;
+    top: 0;
+
+}
+.nav a .fa{
+    margin-right: -1.1em;
+    transform: scale(0);
+    transition: .3s;
+
+}
+.nav li:hover .fa{
+    margin-right: 0em;
+    transform: scale(1);
+}
+.nav li:hover > a{
+    background-color: rgba(0,0,0,.5);
+}
+.nav ul{
+    display: none;
+    position: absolute;
+    left: 100%;
+    width: 300px;
+    top: 6px;
+    background-color:  rgba(255,255,255,.2);
+    box-shadow: 5px 5px 10px hsla(240,40%,15%,.6);
+}
+.nav li:hover > ul{
+    display: block;
+}
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" name="" id="side-menu-switch">
+
+<div class="side-menu">
+    <form>
+        <input type="search" placeholder="請輸入關鍵字">
+        <button><i class="fa fa-search"></i></button>
+    </form>
+    <ul class="nav">
+        <!--圖標-->
+        <li>
+        <a href="#">
+            <i class="fa fa-plane" aria-hidden="true"></i>搜機票</a>
+            <ul>
+                <li>
+                    <a href='#'>國際機票</a>
+                    <ul>
+                        <li><a href="#">航空公司偏好</a></li>
+                        <li><a href="#">艙等</a></li>
+                        <li><a href="#">直飛</a></li>
+                        <li><a href="#">多行程</a></li>
+                    </ul>
+                </li>
+
+                <li><a href='#'>國內機票</a><ul>
+                    <li><a href="#">出發地:TSA 台北(松山)</a></li>
+                    <li><a href="#">目的地:MZG 澎湖</a></li>
+                    <li><a href="#">單程</a></li>
+                    <li><a href="#">來回</a></li>
+                </ul>
+            </li>
+                <li><a href='#'>機加酒</a><ul>
+                    <li><a href="#">離島微度假</a></li>
+                    <li><a href="#">一起去曼谷</a></li>
+                    <li><a href="#">暢玩首爾</a></li>
+                    <li><a href="#">澎湖好好玩</a></li>
+                </ul>
+            </li>
+                <li><a href='#'>護照.簽證</a><ul>
+                    <li><a href="#">護照申辦</a></li>
+                    <li><a href="#">各國簽證</a></li>
+                    <li><a href="#">國際學生證</a></li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+
+            <li>
+                <a href="#">
+            <i class="fa fa-suitcase" aria-hidden="true"></i>找住宿</a>
+         <ul>
+                <li>
+                    <a href='#'>國外</a>
+                    <ul>
+                        <li><a href="#">目的地</a></li>
+                        <li><a href="#">入住</a></li>
+                        <li><a href="#">退房</a></li>
+                        <li><a href="#">房間及人數</a></li>
+                    </ul>
+                </li>
+
+                <li><a href='#'>國內</a><ul>
+                    <li><a href="#">民宿</a></li>
+                    <li><a href="#">親子飯店</a></li>
+                </ul>
+            </li>
+                <li><a href='#'>全球訂房</a><ul>
+                    <li><a href="#">日韓</a></li>
+                    <li><a href="#">東南亞</a></li>
+                    <li><a href="#">歐美奧</a></li>
+                    <li><a href="#">港澳大陸</a></li>
+                </ul>
+            </li>
+                <li><a href='#'>護照.簽證</a><ul>
+                    <li><a href="#">護照申辦</a></li>
+                    <li><a href="#">各國簽證</a></li>
+                    <li><a href="#">國際學生證</a></li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+
+            <li>
+                <a href="#">
+            <i class="fa fa-hand-peace-o" aria-hidden="true"></i>玩世界
+        </a> <ul>
+            <li>
+                <a href='#'>東北亞</a>
+                <ul>
+                    <li><a href="#">輕井澤富士山三溫泉悠活3日游</a></li>
+                    <li><a href="#">東京迪士尼.晴空塔.箱根5日游</a></li>
+                    <li><a href="#">安妞！韓式渡假村~韓國3日游</a></li>
+                    <li><a href="#">釜山行! 伊甸園滑雪場~7日游</a></li>
+                </ul>
+            </li>
+
+            <li><a href='#'>東南亞</a><ul>
+                <li><a href="#">泰享樂~泰國金色沙灘</a></li>
+                <li><a href="#">新馬逍遙遊～金沙濱海灣</a></li>
+                <li><a href="#">檳城超值選～</a></li>
+            </ul>
+        </li>
+            <li><a href='#'>歐洲</a><ul>
+                <li><a href="#">「經典歐洲」荷比法10日～</a></li>
+                <li><a href="#">【北歐四國】丹麥.瑞典.挪威.芬蘭.雙峽灣10天</a></li>
+            </ul>
+        </li>
+            <li><a href='#'>美加/紐奧</a><ul>
+                <li><a href="#">冬戀加拿大</a></li>
+                <li><a href="#">我在紐西蘭8號~紐航南北島森呼吸8天</a></li>
+
+            </ul>
+        </li>
+        </ul>
+    </li>
+</li>
+
+            <li>
+                <a href="#">
+            <i class="fa fa-gratipay" aria-hidden="true"></i>瘋台灣</a> <ul>
+                <li>
+                    <a href='#'>東台灣</a>
+                    <ul>
+                        <li><a href="#">花蓮</a></li>
+                        <li><a href="#">台東</a></li>
+                        <li><a href="#">宜蘭</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href='#'>南台灣</a><ul>
+                    <li><a href="#">高雄</a></li>
+                    <li><a href="#">墾丁</a></li>
+                    <li><a href="#">嘉義</a></li>
+                    <li><a href="#">台南</a></li>
+                </ul>
+            </li>
+                <li><a href='#'>中台灣</a><ul>
+                    <li><a href="#">南投</a></li>
+                    <li><a href="#">台中</a></li>
+                    <li><a href="#">彰化</a></li>
+                    <li><a href="#">雲林</a></li>
+                </ul>
+            </li>
+                <li><a href='#'>北台灣</a><ul>
+                    <li><a href="#">北北基</a></li>
+                    <li><a href="#">桃園</a></li>
+                    <li><a href="#">新竹</a></li>
+                    <li><a href="#">苗栗</a></li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+        </li>
+
+            <li>
+                <a href="#">
+            <i class="fa fa-weixin" aria-hidden="true"></i>聯絡我們</a> <ul>
+                <li>
+                    <a href='#'>企業服務</a>
+                    <ul>
+                        <li><a href="#">福委合作</a></li>
+                        <li><a href="#">活動專案</a></li>
+                        <li><a href="#">員工旅遊</a></li>
+
+                    </ul>
+                </li>
+
+                <li><a href='#'>客製旅遊</a><ul>
+                    <li><a href="#">畢業旅行</a></li>
+                    <li><a href="#">家族旅遊</a></li>
+                    <li><a href="#">海外婚禮</a></li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+        </li>
+    </ul>
+<label for="side-menu-switch">
+    <i class="fa fa-angle-right"></i>
+    <!-- 飛鏢圖示 -->
+
+</label>
+</div>
+
+</body>
+</html>

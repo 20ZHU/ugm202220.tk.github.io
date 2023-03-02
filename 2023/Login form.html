@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登入表單</title>
+
+
+<!-- font-family:'Noto+Sans TC', sans-serif; -->
+    <style type="text/css">   /* 字體 */
+        @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Noto+Serif+TC:wght@300;500;900&display=swap");
+    *{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+     }
+     html,body{
+        height: 100%;
+     }
+     body{
+        background: url(https://images.pexels.com/photos/37347/office-sitting-room-executive-sitting.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center /cover;
+       /*no-repeat center /cover; 指令:使圖片便滿版*/
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        }/*將會員登入的欄位框置中*/
+     .login{
+        width: 600px;
+        height: 500px;
+        background-color: rgba(0,0,0,.5);
+        border-radius: 10px;
+        border: 10px solid #fff;
+        box-shadow: 0 0 60px #000;
+        backdrop-filter: blur(4px);   /*毛玻璃效果*/
+        display: flex;
+        justify-content: center;     /*變更選項內容位置*/
+        align-items: center;
+     }
+     .form{
+        width: 400px;
+        color: #fff;
+     }
+     .form h2{
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #fff;
+     }
+     .form .group{
+        margin-bottom: 20px;
+     }
+     .form laber{
+        line-height: 2;
+        font-family:'Noto+Sans TC', sans-serif;
+     }
+     .form input{
+        width: 100%;
+        border: 1px solid #aaa;
+        line-height: 3;
+        border-radius: 5px;
+     }
+
+     /*按鈕*/
+     .form .btn-group{
+        font-size: 0;
+        margin-top: 50px;
+     }
+     .form .btn{
+        font-size: 20px;
+        border-radius: 5px;
+        border: none;
+        background-color: #e0a65a;
+        width: 190px;
+        padding: 10px 0;
+        color: #fff;
+        font-family:'Noto+Sans TC', sans-serif;
+     }
+     .form .btn + .btn{
+        margin-left: 20px;
+     }
+    </style>
+</head>
+<body>
+<div class="login">
+    <form class="form">
+        <h2>會員登入</h2>
+        <div class="group">
+            <label for="user_id">帳號</label>
+            <input type="text" name="" id="user_id">
+        </div>
+        <div class="group">
+            <label for="user_password">密碼</label>
+            <input type="password" name="" id="user_password">
+        </div>
+        <div class="btn-group">
+            <button class="btn">登入</button>
+            <button class="btn">取消</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
