@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+
+
+  <!-- Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
+  <!-- 參考 https://bootstrap-table.com/docs/getting-started/introduction/ -->
+  <!-- 引入CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.2/dist/bootstrap-table.min.css">
+
+  <!-- 引入JS -->
+  <script src="https://unpkg.com/bootstrap-table@1.21.2/dist/bootstrap-table.min.js"></script>
+
+  <title>帳戶管理</title>
+  </head>
+
+  <body style= background-image:linear-gradient(90deg,#E6EAF4,#d0d2d6);>
+  <div class="container-sm">
+  <h1 class="text-center" style ="background-color: #3CABA3;color: #eee">帳戶管理</h1>
+  <table id="table" style=border:3px double #666;font-family>
+  <thead>
+  <!-- class="border border-info" -->
+  <!-- <tr class="table-info"> -->
+
+          <tr style="background: #78C2C4">
+          <th data-field="id" data-align="center"  data-width="80"
+          class = "container-sm" data-sortable='true' data-visible='true'>帳戶編號</th>
+          <th data-field="u-name"data-align="center" data-width="180" data-sortable='true' data-visible='true'>帳戶名稱</th>
+          <th data-field="name" data-align="center" >姓名</th>
+          <th data-field="email" data-align="center" >註冊信箱</th>
+          <th data-field="date" data-align="center" >有效時間</th>
+          </tr>
+</thead>
+</table>
+</div>
+<template>
+      <div class="chart">
+      <line-chart :data="data" />
+      </div>
+</template>
+
+<script>
+        $(function() {
+        $('#table').bootstrapTable({
+        url: "Account management.json",
+        toolbar: '#toolbar',
+        uniqueId: 'id', //哪一個欄位是key
+        sortName: 'id', //依照那個欄位排序
+        // height: 400, //設定高度
+        pagination: true, //使否要分頁
+        //可於ToolBar上顯示的按鈕
+        showColumns: true, //顯示/隱藏哪些欄位
+        showToggle: true, //名片式/table式切換
+        showPaginationSwitch: false, //分頁/不分頁切換
+        showRefresh:  false, //重新整理 false
+        search: true, //查詢
+        onPageChange: function(currentPage, pageSize) {
+          console.log("目前頁數: " + currentPage + " ,一頁顯示: " + pageSize + " 筆");
+        },
+        pageSize: 10, //一頁顯示幾筆
+        pageList: [5,10, 15, 20, 30, 40], //一頁顯示幾筆的選項
+
+        formatRecordsPerPage: function(pageSize) {
+          return '&nbsp;&nbsp;每頁顯示 ' + pageSize + ' 筆';
+        },
+        formatShowingRows: function(fromIndex, toIndex, totalSize) {
+        //目前第幾頁
+        var currentPage = Math.ceil(fromIndex / this.pageSize);
+        //總共幾頁
+        var totalPageCount = Math.ceil(totalSize / this.pageSize);
+        return '第 ' + currentPage + ' 頁&nbsp;&nbsp;共 ' + totalPageCount + ' 頁';
+        }
+      })
+    })
+</script>
+
+
+<!-- 銷售統計表 折線圖 -->
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-family: 'Noto Serif TC', serif;
+  }
+  .chartMenu {
+    width: 100vw;
+    height: 40px;
+    background: #78C2C4;
+    color: rgb(14, 52, 75);
+  }
+  .chartMenu p {
+    padding: 5px;
+    font-size: 23px;
+    text-align:center;
+  }
+  .chartCard {
+    width: 100vw;
+    height: calc(100vh - 40px);
+    background: rgba(43, 154, 228, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chartBox {
+    width: 700px;
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 3px rgba(54, 162, 235, 1);
+    background: white;
+  }
+</style>
+</head>
+<body>
+<div class="chartMenu">
+  <p> <b>銷售統計表</b> </p>
+</div>
+<div class="chartCard";style="text-align">
+<div class="chartBox">
+<canvas id="myChart"></canvas>
+</div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
+
+
+<script>
+// setup
+const data = {
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  datasets: [{
+    label: 'Red Line (Taiwan)',
+    data: [12, 15, 13, 14, 15, 12, 17],
+    backgroundColor: 'rgba(255, 26, 104, 0.2)',
+    borderColor: 'rgba(255, 26, 104, 1)',
+    borderWidth: 3
+  },{
+    label: 'Black Line (london)',
+    data: [1, 2, 6, 10, 5, 6, 7],
+    backgroundColor:'rgba(0, 0, 0, 0.2)',
+    borderColor: 'rgba(0, 0, 0, 1)',
+    borderWidth: 3
+  },{
+    label: 'Green Line (Tokyo)',
+    data: [9, 7, 6, 5, 7, 8, 3],
+    backgroundColor:  'rgba(75, 192, 192, 0.2)',
+    borderColor:   'rgba(75, 192, 192, 1)',
+    borderWidth: 3
+  }]
+  };
+// config
+const config = {
+  type: 'line',
+  data,
+  options: {
+    onHover: (event, chartElement) => {
+    // console.log(event);
+    // console.log(chartElement)
+    if(chartElement[0]){
+        // console.log(chartElement[0].datasetIndex)
+        thickLine(chartElement[0].datasetIndex, 7);
+    } else {
+        thickLine(-1, 3);
+    }
+    },
+    tension: 0.4,
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    },
+    plugins: {
+    tooltip: {
+     usePointStyle: true,
+     pointStyle: 'circle'
+        },
+    legend: {
+    labels: {
+    usePointStyle: true,
+    pointStyle: 'circle'
+      }
+     }
+    }
+  }
+};
+
+// render init block
+const myChart = new Chart(
+     document.getElementById('myChart'),
+     config
+);
+
+function thickLine(datasetIndex, linethickness){
+console.log(datasetIndex)
+if(datasetIndex >=0){
+    myChart.config.data.datasets[datasetIndex].borderwidth = linethickness;
+} else{
+    myChart.config.data.datasets.map(dataset => {
+    datasets.borderwidth = linethickness;
+    });
+}
+    myChart.update();
+    console. log('this is thickline function')
+    };
+
+// // Instantly assign Chart.js version
+// const chartVersion = document.getElementById('chartVersion');
+// chartVersion.innerText = Chart.version;
+</script>
+</body>
+</html>

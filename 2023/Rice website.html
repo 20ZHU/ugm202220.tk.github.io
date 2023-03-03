@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--RWD 必要元素-->
+    <meta name="description" content="網頁描述內容"/>
+
+    <title>簡單排個版</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Noto+Serif+TC:wght@300;500;900&display=swap" rel="stylesheet">
+    <style>@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&family=Noto+Serif+TC:wght@300;500;900&display=swap');
+    </style>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+
+        /* 導覽列格式 */
+        .header{
+            background-color: #e6d02d;
+            color: rgb(34, 75, 6);
+
+        }
+        .header .comp{
+            font-weight: bold;
+            font-size: 30px;
+            align-self: center;
+            flex-shrink: 0;
+        }
+        .header a{
+            color: #435243;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            padding: 10px;
+            transition: .5s;
+             /*增加導覽列的動畫秒素 */
+        }
+        .header a:hover{
+            background-color: rgba(238, 201, 34, 0.897);
+            color:#69050d;  /*讓導覽列的超連結變色 */
+            padding: 10px 20px;         /*增加視覺動感 */
+        }
+        nav{
+            text-align: right;
+            /* width: 100%; */
+            flex-grow: 1;
+        }
+        nav .side{
+            margin-right: .5%;
+        }
+
+        /* Banner */
+        .banner{
+            width: 100%;
+            height: 300px;
+            background-image: url(https://images.pexels.com/photos/2165758/pexels-photo-2165758.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+            background-size: cover;
+            background-position: center;
+            padding: 100px;
+            font-size: 80px;
+            color: rgb(231, 193, 21);
+            width: auto;
+        }
+
+        /* 內容樣式 */
+        h1{
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 900;
+        }
+        p.CT{
+            font-family: 'Noto Serif TC', serif;
+            font-weight: 500;
+        }
+        p.EN,.banner{
+            font-family: 'Lobster Two', cursive;
+            font-weight: 400;
+        }
+        /* CARD 卡片 */
+        .layout{
+            margin-top: 40px;
+        }
+        .card{
+            flex: 1 1 auto;     /* grow-shrink-basis */
+            margin: .5%;
+            /* padding: 1%; */
+            border: 1px solid #aaa;
+            border-radius: 10px;
+            position: relative;       /*相對定位*/
+        }
+        .card .space{
+            height: 20px;
+        }
+        .card img{
+            width: 100%;
+            /* border-radius: 10px 10px 0 0; */
+            opacity: .8;  /*透明度設定值0~1*/
+            transition: .5s;  /*增加導覽列的動畫秒素 */
+        }
+        .card img:hover{
+            opacity: 1;  /*屬邊過來時圖片透明度加深*/
+        }
+        .card .card-text{
+            width: 90%;
+            margin: auto;
+        }
+        .card .tag{
+            background-color: rgb(221, 56, 15);
+            color: rgb(245, 245, 245);
+            font-weight: bold;
+            padding: 15px 10px;
+            border-radius: 50%;
+            position: absolute;
+            top: 10; left: 10;
+            z-index: 1;
+        }
+
+        /* 活動簡介 */
+        .intro{
+            background-color: #e4c142;
+            margin: 40px 0;
+        }
+        .intro .limit{
+            width: 80%;
+            margin: auto;
+            background-color: #ccc;
+            background-color: #ebd532;
+        }
+        .intro .limit .infoPic{
+            flex: 1 1 0;
+        }
+        .intro .limit .infoPic img{
+            width: 100%;
+            vertical-align: bottom;                 /* 修正圖片底部對齊 */
+        }
+        .intro .limit .infoText{
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            flex: 1 1 0;
+        }
+
+
+        /* 報名訊息 */
+        .project{
+            background-color: #cef05d ;
+            color: #164616 ;
+            padding: 10px;
+            width: 160px;
+        }
+        .p-info{
+            background-color: #dbe9fd ;
+            padding: 18px;
+            display: none;                               /*藏起來*/
+        }
+
+        /* 頁尾 */
+        .footer{
+            background-color: #e6d02d;
+            color:#435243;
+            text-align: center;
+            padding: 10px;
+            margin-top: 60px;
+            text-align: center;                          /*置中*/
+        }
+
+
+        /* RWD控制 */
+           @media screen and (min-width:820px){
+            .header{
+            display: flex;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 2;
+            }
+            .layout{
+                display: flex;
+            }
+            .intro .limit{
+                display: flex;
+            }
+            }
+</style>
+</head>
+<body>
+
+    <!-- 導覽列 -->
+    <div class="header">
+        <img src="https://img.logoipsum.com/285.svg" alt="LOGO"  style="margin-left: 20px;">
+        <span class="comp animate__animated animate__bounceInRight">務農人</span>
+    <nav>
+        <a href="#">最新消息</a>
+        <a href="#">環控設備</a>
+        <a href="#">產學合作</a>
+        <a href="#XX">市集活動</a>
+        <a href="#" class="side">聯絡我們</a>
+    </nav>
+    </div>
+
+    <!-- Banner -->
+    <div class="banner"> HAND MADE </div>
+
+    <!-- 網頁內容 -->
+    <h1>最新消息</h1>
+    <p>為強化國產優質米糧產品推廣，將國產米糧原料及各類米糧產品打入消費者日常生活，歡迎符合遴選辦法之廠商報名參加展售活動。</p>
+
+    <!-- <p class="EN"></p>  字體1 -->
+    <!-- <p class="CT"></p> 字體2-->
+
+    <p>台灣稻米經歷多族群融合及時間演變，除仍做為傳統台灣人主食之外，現今更以多元化的方式發展。目前在米產品方面，以推動小包裝、伴手禮、結婚禮盒等方式，配合每年辦理之產品促銷活動，及研發稻米相關製品等米食加工品，創新傳統米食等，提昇食米消費量。</p>
+
+    <p>
+        此外，也辦理學童種稻、民眾插秧體驗、企業認養稻田、稻田彩繪及稻田音樂會等活動，與教育、文化、企業結合，融合生活與教育，強化國人對稻米產業的認識，再次賦予台灣稻米產品新的形象地位。
+    </p>
+
+    <div class="layout">
+        <div class="card">
+        <div class="space"></div>
+        <img src="https://images.pexels.com/photos/2589457/pexels-photo-2589457.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="CardPicture">
+        <div class="card-text">
+    <h3>生產環境</h3>
+    <p>水稻是台灣最主要的糧食作物。台灣地處亞熱帶，北迴歸線橫過本島中部，全島氣候溫暖，平均日照及雨量充沛，適宜稻作生產。每年分兩期耕作，一期作約自一月至七月，生育期約120天，二期作約自7月至12月，生育期約100天，依地區及品種略有差異。西部地區為主要的生產地區，生育期氣溫較高，稻穀充實飽滿；東部地區溫度及日照較低，稻穀充實期長，稻穀品質優良。
+    </p>
+    </div>
+    </div>
+        <div class="card" style="top: -20px;">
+        <div class="space"></div>
+        <div class="tag">HOT</div>
+ <!--HOT標籤，凸塊突起設定-->
+
+        <img src="https://images.pexels.com/photos/2162170/pexels-photo-2162170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="CardPicture">
+        <div class="card-text">
+    <h3>品種特色</h3>
+    <p>稻米於台灣種植已久，根據台灣各區域的考古研究，台灣稻作栽培已有三千年以上的歷史，明朝開始已有原住民種植陸稻之文獻記載，明末由漢人及荷蘭人引入多樣的稻種(大多數為秈稻)及栽培技術。至日據時代，日本人由日本引進稉稻並進行育種工作，選育出適合台灣亞熱帶氣候、對日照鈍感、產量增加之稉稻品種。由於官方大力推廣，稉稻種植面積很快超過秈稻，日本殖民地政府於1926年將台灣所生產之稉米命名為「蓬萊米」。目前台灣栽培之水稻品種多屬於稉型，在作物學家近百年來的努力下，無論品種及栽培技術皆已達優質水準，是世界上生產優質稉型稻米緯度最低的國家之一。</p>
+    </div>
+    </div>
+    <div class="card">
+    <div class="space"></div>
+    <img src="https://images.pexels.com/photos/9293267/pexels-photo-9293267.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="CardPicture">
+    <div class="card-text">
+    <h3>台灣米生產及品質管理體系的特色</h3>
+    <p>行政院農業委員會為提升台灣米品質與確保消費者之安全，設置並輔導成立「稻米產銷專業區」、「有機米產銷班」，並推動「TAP產銷履歷農產品」、「CAS台灣有機農產品」及「CAS台灣優良農產品」等標章制度，且導入各標章制度所依據的認、驗證制度，提供廣大消費者安全、優質、高品質的台灣米。</p>
+    </div>
+    </div>
+    </div>
+
+    <!-- 活動簡介 -->
+    <div class="intro" id="XX">
+    <div class="limit">
+    <div class="infoPic">
+    <img src="https://images.pexels.com/photos/1172241/pexels-photo-1172241.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="ProjectPicture">
+    </div>
+    <div class="infoText">
+    <h3>稻米產銷專業區</h3>
+    <p>「稻米產銷專業區」係結合生產、加工及行銷等相關企業及團體，以產銷一元化為專業區之設置目的，其設置前須進行水質、土質的完整分析，並搭配生產階段的肥料、農藥管理，以及收穫後的農藥殘留檢測，以確保台灣米優質及安全的品質。因此產銷專業區生產出來的稻米，是具有高度信賴、高安全、高價值，「三高」的台灣模範米。</p>
+    </div>
+    </div>
+    </div>
+
+     <!-- 報名訊息 -->
+    <div class="project">TAP產銷履歷</div>
+    <div class="p-info">
+    <p>為提升台灣稻米的品質與安全，及維護國民健康及消費者之權益，農糧署將國家相關認驗證制度導入稻米產業，並依據其驗證標準發給各種標章，提供消費者更有保障的消費環境與產品。</p>
+    </div>
+
+    <h3>活動說明</h3>
+    <p>一、產製國產稻米及相關加工製品之合法立案企業、公司行號、農會、農民、生產合作社（場）或其他農民團體等；可開立統一發票、具開拓國產米糧精品行銷業務能力（包括商流、營運、行銷推廣等）。</p>
+
+    <p>二、銷售之產品以國產米、國內產製之米糧加工產品（加工產品原料若含進口麵粉，進口麵粉含量之烘焙百分比不得高於百分之50％）為限，且需符合糧食管理法、食品安全衛生管理法及商品標示法等相關法規規定，前述產品項目不含生鮮蔬果。</p>
+
+    <P>三、展售米糧產品不得含有目視可見之進口原料成分，如：堅果、杏仁片、藍莓醬等進口原料成分，該等產品不得於希望廣場展售。</P>
+
+    <div class="footer"> &copy; copyright 2022 by ZHU </div>
+
+
+
+
+
+
+<!--載入 JQuery函式庫--> <!--載入有趣的動態效果-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js">
+</script>
+<!--JQuery 控制-->
+<script>
+
+    $(".project").hover(function(){
+
+        $(".p-info").slideToggle();
+
+    })
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

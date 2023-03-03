@@ -1,0 +1,90 @@
+[
+  {
+    "id": "00",
+    "u-name": "總經理",
+    "name": "Joy",
+    "email": "Joy@gmail.com",
+    "date": "2024/12/28"
+  },
+    {
+      "id": "01",
+      "u-name": "門市經理A",
+      "name": "Alpha",
+      "email": "Alpha@gmail.com",
+      "date": "2024/12/28"
+    },
+    {
+      "id": "02",
+      "u-name": "門市經理B",
+      "name": "Eve",
+      "email": "Eve@gmail.com",
+      "date": "2024/12/29"
+    },
+    {
+      "id": "03",
+      "u-name": "門市經理C",
+      "name": "Wendy",
+      "email": "Wendy@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "04",
+      "u-name": "門市經理D",
+      "name": "Babs",
+      "email": "Babs@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "05",
+      "u-name": "門市副理a",
+      "name": "Abbott",
+      "email": "Abbott@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "06",
+      "u-name": "門市副理b",
+      "name": "Barbara",
+      "email": "Barbara@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "07",
+      "u-name": "門市副理c",
+      "name": "Elaine",
+      "email": "Elaine@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "08",
+      "u-name": "門市副理d",
+      "name": "Diane",
+      "email": "Diane@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "09",
+      "u-name": "門市副理e",
+      "name": "Flo",
+      "email": "Flo@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "10",
+      "u-name": "門市副理f",
+      "name": "Deb",
+      "email": "Deb@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "11",
+      "u-name": "門市副理g",
+      "name": "Elsa",
+      "email": "Elsar@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "12",
+      "u-name": "門市副理h",
+      "name": "Fay",
+      "email": "Fay@gmail.com",
+      "date": "2025/12/30"
+    },{
+      "id": "13",
+      "u-name": "門市副理i",
+      "name": "Abner",
+      "email": "Abner@gmail.com",
+      "date": "2025/12/30"
+    }
+  ]
